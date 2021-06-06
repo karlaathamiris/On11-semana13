@@ -3,10 +3,10 @@ const router = express.Router()
 
 const controller = require('../controllers/moviesControllers')
 
-router.get('/', controller.listMovies)
-router.post('/', router.creatMovie)
-router.get('/:id', router.movie)
-router.get('/:id', router.searchBody)
-router.get('/:id', router.getDelete)
+router.post('/', controller.addMovie)
+router.get('/', controller.getAll)
+router.get('/:id', controller.getOne)
+router.patch('/:id', controller.refreshMovie)
+router.delete('/:id', controller.deleteMovie)
 
 module.exports = router

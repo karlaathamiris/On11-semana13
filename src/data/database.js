@@ -1,7 +1,8 @@
+require ('dotenv').config()
 const mongoose = require('mongoose')
 
 const connect = () => {
-    mongoose.connect('mongodb://localhost:27017/movies', {
+    mongoose.connect(process.env.DATABASE_URL, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     }).then(console.log('MongoDB conectado')).catch(err => console.err)
